@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/ByteBank/obj/Debug
+/ByteBank/bin/Debug/ByteBank.pdb
+/ByteBank/bin/Debug/ByteBank.exe.config
+/ByteBank/bin/Debug/ByteBank.exe
+/.vs/ByteBank/v15/.suo
+/.vs/ByteBank/v15/Server/sqlite3/storage.ide-wal
+/.vs/ByteBank/v15/Server/sqlite3/storage.ide-shm
+/.vs/ByteBank/v15/Server/sqlite3/storage.ide
+/.vs/ByteBank/v15/Server/sqlite3/db.lock

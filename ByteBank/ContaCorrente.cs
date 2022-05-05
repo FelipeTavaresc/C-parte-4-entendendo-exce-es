@@ -9,30 +9,10 @@ namespace ByteBank
     public class ContaCorrente
     {
         public static double TaxaOperacao { get; private set; }
-
         public static int TotalDeContasCriadas { get; private set; }
-
         public Cliente Titular { get; set; }
-
-        public int Numero { get; set; }
-
-        private int _agencia;
-        public int Agencia
-        {
-            get
-            {
-                return _agencia;
-            }
-            set
-            {
-                if (value <= 0)
-                {
-                    return;
-                }
-
-                _agencia = value;
-            }
-        }
+        public int Numero { get; }
+        public int Agencia { get; }
 
         private double _saldo = 100;
         public double Saldo
@@ -54,12 +34,16 @@ namespace ByteBank
 
         public ContaCorrente(int agencia, int numero)
         {
+            if (agencia <= 0)
+                throw new ArgumentException("O argumento agencia deve ser maior que 0.", nameof(agencia));
+            if (numero <= 0)
+                throw new ArgumentException("O argumento numero deve ser maior que 0.", nameof(numero));
+
             Agencia = agencia;
             Numero = numero;
 
-            TaxaOperacao = 30 / TotalDeContasCriadas;
-
             TotalDeContasCriadas++;
+            TaxaOperacao = 30 / TotalDeContasCriadas;
         }
 
         public bool Sacar(double valor)
